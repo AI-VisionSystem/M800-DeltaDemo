@@ -1,0 +1,11 @@
+# Local builds and per-machine parameters
+**/build*/
+**/CMakeFiles/
+**/CMakeCache.txt
+*.user
+*.obj
+*.o
+*.pdb
+*.log
+**/DeltaDemo.json
+**/preview*.png

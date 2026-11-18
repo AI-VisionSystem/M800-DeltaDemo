@@ -1,0 +1,11 @@
+/build*/
+*.user
+/.qmake.stash
+Makefile*
+/debug/
+/release/
+
+/toolchains/downloads/
+/toolchains/sysroot/
+/toolchains/arm-gnu-*/
+/toolchains/gnu13/

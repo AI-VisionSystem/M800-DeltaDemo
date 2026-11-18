@@ -1,0 +1,9 @@
+QT = core network
+CONFIG += console c++17
+CONFIG -= app_bundle
+TEMPLATE = app
+TARGET = controller_test
+INCLUDEPATH += mock ../src
+SOURCES += controller_test.cpp ../src/RobotController.cpp ../src/Settings.cpp
+win32: QMAKE_CXXFLAGS += /utf-8
+DESTDIR = $$OUT_PWD

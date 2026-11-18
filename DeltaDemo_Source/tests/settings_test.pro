@@ -1,0 +1,9 @@
+QT = core
+CONFIG += console c++17
+CONFIG -= app_bundle
+TEMPLATE = app
+TARGET = settings_test
+INCLUDEPATH += ../src
+SOURCES += settings_test.cpp ../src/Settings.cpp
+win32: QMAKE_CXXFLAGS += /utf-8
+DESTDIR = $$OUT_PWD

@@ -18,7 +18,7 @@ QString platformName() {
 #ifdef _WIN32
     return QStringLiteral("Windows · E450");
 #else
-    return QStringLiteral("RK3588 · M800");
+    return QStringLiteral("M800");
 #endif
 }
 QWidget* wrapScroll(QWidget* content) {
@@ -341,7 +341,7 @@ void MainWindow::poll() {
     const auto servoState=valid?QString("当前 %1/4 轴已使能").arg(enabledAxes):QStringLiteral("使能状态不可用");
     m_enableServos->setToolTip(servoState);m_disableServos->setToolTip(servoState);
     m_position->setText(valid&&s.positionValid?QStringLiteral("当前空间坐标（XYZR）：X %1 mm  Y %2 mm  Z %3 mm  R %4°").arg(s.position[0],0,'f',3).arg(s.position[1],0,'f',3).arg(s.position[2],0,'f',3).arg(s.position[3],0,'f',3):QStringLiteral("当前空间坐标（XYZR）：—（未初始化、未回零或坐标不可用）"));
-    m_position->setToolTip(m_position->text()+(s.pulsePose?QStringLiteral("\nRK3588：由实时指令脉冲正解计算，非编码器实测位置"):QString{}));
+    m_position->setToolTip(m_position->text()+(s.pulsePose?QStringLiteral("\nM800：由实时指令脉冲正解计算，非编码器实测位置"):QString{}));
     for(int i=0;i<4;++i){const auto& a=s.axes[i];const QStringList values={QString::number(i),QString("%1 / %2").arg(a.pulses).arg(a.encoder),s.positionValid?QString::number(a.angle,'f',3):QStringLiteral("—"),QString::number(a.speed,'f',3),stateText(a.enabled),stateText(a.homed),stateText(a.running||a.homing),stateText(a.origin),QString("%1 / %2").arg(stateText(a.positiveLimit),stateText(a.negativeLimit)),stateText(a.alarm)};for(int c=1;c<10;++c)m_statusTable->item(i,c)->setText(valid?values[c]:QStringLiteral("—"));}
 }
 bool MainWindow::eventFilter(QObject* obj,QEvent* event) {

@@ -63,7 +63,7 @@ QString RobotController::connectCard(const Settings& s) {
     const auto openError=sdkError(rc,"SLDM_Set_Card_List / SLDM_Open_IP");
     if(!openError.isEmpty())return openError;
 #else
-    // M800 onboard path from the existing RK3588 project. Verify against the
+    // M800 onboard path from the existing M800 project. Verify against the
     // matching ARM64 SDK before shipping; never substitute an x86 Linux library.
     unsigned long count=8,types[8]={};
     CHECK(SLDM_Get_Card_List(101,&count,types));

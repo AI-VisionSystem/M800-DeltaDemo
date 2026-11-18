@@ -28,6 +28,6 @@ win32 {
     QMAKE_CXXFLAGS += /utf-8 /wd4819 /wd4828
     !CONFIG(preview): QMAKE_POST_LINK += $$QMAKE_COPY $$shell_path($$PWD/sdk/windows/lib/sldmv.dll) $$shell_path($$DESTDIR/sldmv.dll)
 } else {
-    DESTDIR = $$PWD/../DeltaDemo_Runtime/RK3588
+    DESTDIR = $$PWD/../DeltaDemo_Runtime/M800
     !CONFIG(preview): QMAKE_POST_LINK += $$QMAKE_COPY $$shell_path($$PWD/sdk/rk3588/lib/libsldml.so) $$shell_path($$DESTDIR/libsldml.so)
 }

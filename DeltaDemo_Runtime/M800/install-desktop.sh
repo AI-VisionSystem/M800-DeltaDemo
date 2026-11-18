@@ -35,7 +35,7 @@ if shutil.which('xdg-user-dir'):
 applications = Path(os.environ.get('XDG_DATA_HOME', str(Path.home() / '.local/share'))) / 'applications'
 content = '\n'.join([
     '[Desktop Entry]', 'Type=Application', 'Version=1.0',
-    'Name=Delta 蜘蛛手控制', 'Comment=Delta 控制 Demo — RK3588 · M800',
+    'Name=Delta 蜘蛛手控制', 'Comment=Delta 控制 Demo — M800',
     'Exec=/bin/sh ' + argument(folder / 'start.sh'),
     'Icon=' + value(folder / 'app.png'),
     'Terminal=false', 'Categories=Utility;', 'StartupNotify=false', '',

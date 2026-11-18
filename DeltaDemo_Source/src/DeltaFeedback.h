@@ -4,7 +4,7 @@
 
 namespace demo {
 // Command-pulse feedback, not an encoder-measured TCP. Same axis convention as
-// the existing RK3588 project: radial axes 0/120/240 degrees, positive arm down.
+// the existing M800 project: radial axes 0/120/240 degrees, positive arm down.
 inline bool deltaPulsePose(const Settings& settings,const std::array<long,4>& pulses,
                            std::array<double,4>& angles,Pose& pose) {
     constexpr double pi=3.14159265358979323846,eps=1e-9;
